@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "parcel build index.html -d docs",
+    "dev": "parcel index.html"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10"
+  }
+}
