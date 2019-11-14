@@ -2,15 +2,17 @@
 window.handsfree = new window.Handsfree({});
 const $emoji = document.querySelector("#emoji");
 
+const plugin = "emojify";
+
 // Disable click and vert scroll
 Handsfree.disable("vertScroll");
 Handsfree.disable("click");
 
 // Create a simple plugin that displays pointer values on every frame
-Handsfree.use("emojify", (pointer, instance) => {
+Handsfree.use(plugin, (pointer, instance) => {
   let emoji = "😐";
   let isFlipped = false;
-  let state = instance.head.state;
+  let { state } = instance.head;
 
   if (state.pursed && state.mouthClosed) emoji = "😗";
   if (state.browsUp) emoji = "🙄";
